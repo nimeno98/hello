@@ -21,14 +21,14 @@
             <!--a class="nav-link" href="index.html">Home</a-->
             <a class="nav-link" href={% url "index" %}>Home</a>
           </li>
-          <li {% if '/about' == request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" {% endif %}>
+          <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" {% endif %}>
             {% comment %} fix about.html later {% endcomment %}
             <!--a class="nav-link" href="about.html">About</a-->
             <a class="nav-link" href={% url "about" %}>About</a>
           </li>
-          <li class="nav-item mr-3">
+          <li {% if 'listings' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" {% endif %}>
             {% comment %} fix listings.html later {% endcomment %}
-            <a class="nav-link" href="listings.html">Featured Listings</a>
+            <a class="nav-link" href={% url "listings" %}>Featured Listings</a>
           </li>
         </ul>
 
