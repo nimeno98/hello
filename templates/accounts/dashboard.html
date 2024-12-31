@@ -32,7 +32,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2>Welcome {{ user.username }}</h2>
+          <h2>Welcome {{ user.first_name }}</h2>
+          {% if contacts %}
           <p>Here are the property listings that you have inquired about</p>
           <table class="table">
             <thead>
@@ -45,24 +46,21 @@
 
             {% comment %} for loop, fix later {% endcomment %}
             <tbody>
-                {% if listings %}
-                {% for listing in listings %}
+                {% for contact in contacts %}
                 <tr>
-                    <td>{{ forloop.counter }}</td>
-                    <td>{{ listing.title }}</td>
+                    <td>{{ contact.id }}</td>
+                    <td>{{ contact.listing }}</td>
                     <td>
-                        <a class="btn btn-light" href="{% url 'listing' listing.id %}">View Listing</a>
+                        <a class="btn btn-light" href="{% url 'listing' contact.listing_id %}">View Listing</a>
                     </td>
                 </tr>
                 {% endfor %}
-                
-                {% else %}
-                <tr>
-                    <td colspan="3">No listings found</td>
-                </tr>
-                {% endif %}
             </tbody>
           </table>
+          
+          {% else %}
+          <p>You have not made any inquiries yet</p>
+          {% endif %}
         </div>
       </div>
     </div>

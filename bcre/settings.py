@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'listings.apps.ListingsConfig',
     'realtors.apps.RealtorsConfig',
+    'accounts.apps.AccountsConfig',
+    'contacts.apps.ContactsConfig',
 ]
 
 MIDDLEWARE = [
@@ -156,3 +158,8 @@ MESSAGE_TAGS = {
     messages.SUCCESS: 'success',
 }
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587 # 578
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = True

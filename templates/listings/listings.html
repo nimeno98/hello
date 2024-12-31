@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load humanize %} {% block content %}
+{% extends 'base.html' %} {% load humanize %} {% block title %} | Features {% endblock %} {% block content %}
 <section id="showcase-inner" class="py-5 text-white">
     <div class="container">
       <div class="row text-center">
@@ -13,7 +13,7 @@
     </div>
   </section>
 
-  <!-- Breadcrumb -->
+<!-- Breadcrumb -->
 <section id="bc" class="mt-3">
     <div class="container">
       <nav aria-label="breadcrumb">
@@ -27,7 +27,9 @@
     </div>
   </section>
 
-  <!-- Listings -->
+{% include 'partials/_alert.html' %}
+
+<!-- Listings -->
 <section id="listings" class="py-4">
     <div class="container">
         <div class="row">

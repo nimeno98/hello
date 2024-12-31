@@ -1,5 +1,8 @@
-{% extends 'base.html' %} {% load humanize %} {% block content %}
+{% extends 'base.html' %} {% load humanize %}
+{% block title %} | Welcome {% endblock %}
+{% block content %}
 <section id="showcase">
+      {% include 'partials/_alert.html' %}
       <div class="container text-center">
         <div class="home-search p-5">
           <div class="overlay p-5">
@@ -11,7 +14,7 @@
             </p>
             <div class="search">
               {% comment %} dynamic data {% endcomment %}
-              <form action='{% url 'search' %}' method='GET'>
+              <form action="{% url 'search' %}" method='GET'>
                 {% comment %} csrf_token {% endcomment %}
                 <!-- Form Row 1 -->
                 <div class="form-row">
